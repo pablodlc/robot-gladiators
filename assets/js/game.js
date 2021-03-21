@@ -8,11 +8,10 @@ console.log(enemyNames);
 let enemyHealth = 50;
 let enemyAttack = 12;
 
-let fight = function(enemyName) {
-// fight function statements
+var fight = function(enemyName) {
+  while(enemyHealth > 0) {
 
 
-    window.alert("Welcome to Robot Gladiators!");
     let promptFight = window.prompt(
         "Do you engage or is retreat the best option?\nEnter 'FIGHT' or 'SKIP' to choose."
     );
@@ -64,7 +63,10 @@ let fight = function(enemyName) {
         window.alert("You need to choose a valid option. Try again!");
     }
 }
+}
 
-for(var i = 0; i < enemyNames.length; i++) {
-  fight(enemyNames[i]);
+for (var i = 0; i < enemyNames.length; i++) {
+  var pickedEnemyName = enemyNames[i];
+  enemyHealth = 50;
+  fight(pickedEnemyName);
 }
